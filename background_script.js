@@ -87,7 +87,7 @@ function startAnimating(fps) {
   canvas.width = window.innerWidth;
   canvas.height = window.innerHeight;
 
-  window.addEventListener("resize", checkResize, false);
+  window.addEventListener("resize", checkOrientation, false);
   fpsInterval = 1000 / fps;
   then = window.performance.now();
   startTime = then;
@@ -121,12 +121,12 @@ var checkResize = function(){
 
 var previousOrientation = window.orientation;
 var checkOrientation = function(){
-if(window.orientation !== previousOrientation){
-  previousOrientation = window.orientation;
-  canvas.width = window.innerWidth;
-  canvas.height = window.innerHeight;
-}
-checkResize();
+  if(window.orientation !== previousOrientation){
+    previousOrientation = window.orientation;
+    canvas.width = window.innerWidth;
+    canvas.height = window.innerHeight;
+  }
+  checkResize();
 };
 
 
