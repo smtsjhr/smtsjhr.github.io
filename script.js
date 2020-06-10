@@ -114,11 +114,13 @@ function close_canvas() {
     var canvas_element = document.getElementById("canvas");
     var iframe_element = document.getElementById("expanded_iframe");
     var background_iframe_element = document.getElementById("background_iframe");
+    var gallery_link_element = document.getElementById("gallery_link");
     image_list = document.querySelectorAll("img");
     image_list.forEach(element => element.style = "");
     iframe_element.src = "";
     canvas_element.style.display = "none";
-    background_iframe_element.style.display = "block";    
+    background_iframe_element.style.display = "block";
+    gallery_link_element.click();    
 }	
 
 function link_action(a) {
