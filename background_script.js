@@ -7,7 +7,7 @@ var separation = 200;
 var space = 20;
 
 var time = 0;
-var rate = 500;
+var rate = 300;
 var initial_rate = rate;
 const osc_rate = 100;
 const separation_rate = 1900;

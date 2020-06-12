@@ -173,8 +173,8 @@
 	</div>
 
 
-	<div style="display: block">
-		<div id="look">
+	<div id="look" style="display: block">
+		<div>
 		</div>
 
 
@@ -197,8 +197,13 @@
 
 
 
- 
-		<div class="row">
+		<div style="position: relative">
+		
+		<button id="left_scroll" type="button" class="scrollbutton" style="left: 0px" scroll-behavior="smooth"; onclick=scroll_action(this)> < </button>
+
+		<button id="right_scroll" type="button" class="scrollbutton" style="right: 0px" scroll-behavior="smooth" onmousedown=scroll_action(this)> > </button>
+
+		<div id="gallery" class="row">
 
 			<div class="column">
 				<a href="#canvas"><img alt="RippleMoire" id="RippleMoire" onclick="loadCanvas(this);" src="/GalleryThumbs/RippleMoire_300.gif" ></a>
@@ -276,10 +281,11 @@
 
 			<div class="column">
 				<a href="#canvas"><img alt="FocusGrid_2" id="FocusGrid_2" onclick="loadCanvas(this);" src="GalleryThumbs/FocusGrid_2_300.gif"></a>
-			</div>
-
+			</div>	
 		</div>
 
+		</div>
+		
 		
 		<div>
 			<br>
