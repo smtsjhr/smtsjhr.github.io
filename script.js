@@ -85,8 +85,6 @@ const iframe_details = {
     }
 };
 
-var selected_image_id;
-
 function loadCanvas(imgs) {
     var iframe_element = document.getElementById("expanded_iframe");
     var section_element = document.getElementById("expanded_section");
@@ -142,3 +140,24 @@ function link_action(a) {
         background_iframe_element.style.display = "block";
     }
 }
+
+function scroll_right() {
+    var gallery_element = document.getElementById("gallery");
+    gallery_element.scrollBy({left: 330, behavior: 'smooth'});  
+}
+
+function scroll_left() {
+    var gallery_element = document.getElementById("gallery");
+    gallery_element.scrollBy({left: -330, behavior: 'smooth'});  
+}
+
+function scroll_action(btn) {
+    
+    if (btn.id == "right_scroll") {
+        scroll_right();
+    }
+    else if (btn.id == "left_scroll") {
+        scroll_left();;
+    }
+}
+

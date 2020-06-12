@@ -6,6 +6,11 @@
 	box-sizing: border-box;
 }
 
+html {
+	scroll-behavior: smooth;
+	-webkit-overflow-scrolling: touch;
+}
+
 body {
 	margin: 0 auto;
 	font-family: "Courier New";
@@ -78,7 +83,7 @@ li:hover {
 	margin: 0;
 	padding: 0;
 	overflow: hidden;
-	opacity: .4;
+	opacity: 0.5;
 	z-index: -1;
 	border: 5px black;
 }
@@ -134,6 +139,7 @@ li:hover {
 }
 
 .row {
+	position: relative;
 	width: 100%;
 	height: 400px;
 	background-color: black;
@@ -152,15 +158,18 @@ li:hover {
 	clear: both;
 }
 
+/*
 .row::-webkit-scrollbar {
-	height: 40px;
+	height: 20px;
 }
 
 .row::-webkit-scrollbar-thumb:horizontal {
 	background: -webkit-radial-gradient(center, 50% 10px, white, black);
 	border-radius: 20px;
 }
+*/
 
+/*
 .row::-webkit-scrollbar-button:horizontal:end:increment {
 	width: 40px;
 	background: linear-gradient(210deg, #000000 40%, rgba(0, 0, 0, 0) 41%), linear-gradient(330deg, #000000 40%, rgba(0, 0, 0, 0) 41%), linear-gradient(90deg, #000000 30%, rgba(0, 0, 0, 0) 31%);
@@ -168,16 +177,38 @@ li:hover {
 	display: block;
 }
 
+
 .row::-webkit-scrollbar-button:horizontal:start:decrement {
 	width: 40px;
 	background: linear-gradient(30deg, #000000 40%, rgba(0, 0, 0, 0) 41%), linear-gradient(150deg, #000000 40%, rgba(0, 0, 0, 0) 41%), linear-gradient(270deg, #000000 30%, rgba(0, 0, 0, 0) 31%);
 	background-color: white;
 	display: block;
 }
+*/
+
+.scrollbutton {
+	position: absolute;
+	top: 0px;
+	width: 40px;
+	height: 400px;
+	margin-bottom: 0px;
+	background-color :rgba(255, 255, 255, .2);
+	border: none;
+	outline: none;
+	font-size: 50px;
+	z-index: 1;
+}
+
+.scrollbutton:active {
+	background-color :rgba(255, 255, 255, .5);
+}
+
 
 .container {
 	position: relative;
+	padding: 20px;
 	display: none;
+
 }
 
 .closebtn {
@@ -193,7 +224,7 @@ iframe.canvas {
 	width: 100%;
 	height: 700px;
 	margin-top: 50px;
-	padding: 20px;
+	padding: 0px;
 	overflow: hidden;
 	border: 5px solid black;
 }
