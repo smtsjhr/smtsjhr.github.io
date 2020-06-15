@@ -19,6 +19,12 @@ const iframe_details = {
         "codepen_url": "https://codepen.io/smtsjhr/details/LYVdweb",
         "github_url": "https://github.com/smtsjhr/Hall_1"
     },
+    "Hall_2": {
+        "url": "https://smtsjhr.github.io/Hall_2/",
+        "codepen_url": "https://codepen.io/smtsjhr/pen/XWXKGrY",
+        "github_url": "https://github.com/smtsjhr/Hall_2",
+        "style": "background-color: black;"
+    },
     "RecWaver": {
         "url": "https://smtsjhr.github.io/RecWaver/",
         "codepen_url": "https://codepen.io/smtsjhr/pen/YzyRweW",
