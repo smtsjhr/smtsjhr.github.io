@@ -417,7 +417,10 @@
 
 <script language="JavaScript">
 	var hash = window.location.hash.substring(1);
-	if (hash == "links" || hash == "look") {
+	if (hash == '') {
+
+	}
+	else if (hash == "links" || hash == "look") {
 		var link_element = document.getElementById(hash+'_link');
 		link_element.click();
 	}
