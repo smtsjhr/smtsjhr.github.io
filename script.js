@@ -98,39 +98,51 @@ const iframe_details = {
 };
 
 function loadCanvas(imgs) {
+    var main_body_element = document.getElementById("main_body");
+    var image_id = imgs.id.replace('_img', '');
+    var canvas_element = document.getElementById("canvas");
     var iframe_element = document.getElementById("expanded_iframe");
-    var section_element = document.getElementById("expanded_section");
     var title_element = document.getElementById("title");
     var codepenURL_anchor = document.getElementById("codepenURL");
     var githubURL_anchor = document.getElementById("githubURL");
     var link_section_element = document.getElementById("link_section");
     var look_text_element = document.getElementById("look_text");
-    var background_iframe_element = document.getElementById("background_iframe")
-    iframe_element.src = iframe_details[imgs.id]["url"];
-    iframe_element.style = iframe_details[imgs.id]["style"];
-    title_element.innerHTML = imgs.id;
-    codepenURL_anchor.href = iframe_details[imgs.id]["codepen_url"];
-    githubURL_anchor.href = iframe_details[imgs.id]["github_url"];
+    var background_iframe_element = document.getElementById("background_iframe");
+    iframe_element.src = iframe_details[image_id]["url"];
+    iframe_element.style = iframe_details[image_id]["style"];
+    title_element.innerHTML = image_id;
+    codepenURL_anchor.href = iframe_details[image_id]["codepen_url"];
+    githubURL_anchor.href = iframe_details[image_id]["github_url"];
     link_section_element.style.display = "none";
     look_text_element.style.display = "none";
     background_iframe_element.style.display = "none";
-    section_element.parentElement.style.display = "block";
+    canvas_element.style.display = "block";
     image_list = document.querySelectorAll("img");
     image_list.forEach(element => element.style = "");
     imgs.style = "box-shadow: 0 0 40px 0px rgba(255,255,255,1)";
+
+    main_body_element.style.display = "none";
+
+    var y = iframe_element.getBoundingClientRect().top + window.pageYOffset; 
+
+    window.scrollTo({top: y, behavior: 'smooth'});
 }
 
 function close_canvas() {
+    var main_body_element = document.getElementById("main_body");
     var canvas_element = document.getElementById("canvas");
     var iframe_element = document.getElementById("expanded_iframe");
     var background_iframe_element = document.getElementById("background_iframe");
-    var gallery_link_element = document.getElementById("gallery_link");
+    var look_link_element = document.getElementById("look_link");
     image_list = document.querySelectorAll("img");
     image_list.forEach(element => element.style = "");
     iframe_element.src = "";
     canvas_element.style.display = "none";
     background_iframe_element.style.display = "block";
-    gallery_link_element.click();    
+    look_link_element.click();
+
+    main_body_element.style.display = "block";
+
 }	
 
 function link_action(a) {
@@ -145,31 +157,21 @@ function link_action(a) {
         link_section_element.style.display = "block";
         look_text_element.style.display = "block";
         background_iframe_element.style.display = "block";
-    } else if (a.id == "gallery_link") {
+    } else if (a.id == "look_link") {
         canvas_container_element.style.display = "none";
         link_section_element.style.display = "none";
         look_text_element.style.display = "none";
-        background_iframe_element.style.display = "block";
+        background_iframe_element.style.display = "none";
     }
-}
-
-function scroll_right() {
-    var gallery_element = document.getElementById("gallery");
-    gallery_element.scrollBy({left: 330, behavior: 'smooth'});  
-}
-
-function scroll_left() {
-    var gallery_element = document.getElementById("gallery");
-    gallery_element.scrollBy({left: -330, behavior: 'smooth'});  
 }
 
 function scroll_action(btn) {
-    
+    var gallery_element = document.getElementById("gallery");
     if (btn.id == "right_scroll") {
-        scroll_right();
+        gallery_element.scrollBy({left: 330, behavior: 'smooth'});
     }
     else if (btn.id == "left_scroll") {
-        scroll_left();;
+        gallery_element.scrollBy({left: -330, behavior: 'smooth'});
     }
 }
 
