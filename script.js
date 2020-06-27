@@ -1,4 +1,10 @@
 const iframe_details = {
+    "WhispyWave": {
+        "url": "https://smtsjhr.github.io/WhispyWave/",
+        "codepen_url": "https://codepen.io/smtsjhr/pen/qBbmqGR",
+        "github_url": "https://github.com/smtsjhr/WhispyWave",
+        "style": "background-color: black;"
+    },
     "RippleMoire": {
         "url": "https://smtsjhr.github.io/RippleMoire/",
         "codepen_url": "https://codepen.io/smtsjhr/pen/JjjGGgb",
