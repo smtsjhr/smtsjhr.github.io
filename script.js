@@ -123,8 +123,8 @@ function loadCanvas(imgs) {
     look_text_element.style.display = "none";
     background_iframe_element.style.display = "none";
     canvas_element.style.display = "block";
-    image_list = document.querySelectorAll("img");
-    image_list.forEach(element => element.style = "");
+    video_list = document.querySelectorAll("video");
+    video_list.forEach(element => element.style = "");
     imgs.style = "box-shadow: 0 0 40px 0px rgba(255,255,255,1)";
 
     main_body_element.style.display = "none";
@@ -140,8 +140,8 @@ function close_canvas() {
     var iframe_element = document.getElementById("expanded_iframe");
     var background_iframe_element = document.getElementById("background_iframe");
     var look_link_element = document.getElementById("look_link");
-    image_list = document.querySelectorAll("img");
-    image_list.forEach(element => element.style = "");
+    video_list = document.querySelectorAll("video");
+    video_list.forEach(element => element.style = "");
     iframe_element.src = "";
     canvas_element.style.display = "none";
     background_iframe_element.style.display = "block";
