@@ -91,9 +91,7 @@ function startAnimating(fps) {
   then = window.performance.now();
   startTime = then;
 
-  if (window.DeviceOrientationEvent) {
-    window.addEventListener("deviceorientation", checkOrientation, false);
-  }
+  window.addEventListener("deviceorientation", checkOrientation, false);
   
   animate();
 }
