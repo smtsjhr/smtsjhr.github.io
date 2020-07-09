@@ -24,6 +24,15 @@ var screenorientation = window.screen.orientation ||
                         window.screen.mozorientation ||
                         window.screen.msorientation;
 
+if (screenorientation == undefined) {
+  var enable_resize = false;
+}
+else {
+  enable_resize = true;
+}
+
+console.log(enable_resize);
+
 var stop = false;
 
 var fps, fpsInterval, startTime, now, then, elapsed;
@@ -94,10 +103,12 @@ function startAnimating(fps) {
   then = window.performance.now();
   startTime = then;
 
-  screenorientation.onchange = function(e) {
-    canvas.width = window.innerWidth;
-    canvas.height = window.innerHeight;
-  };
+  if (enable_resize) {
+    screenorientation.onchange = function(e) {
+      canvas.width = window.innerWidth;
+      canvas.height = window.innerHeight;
+    };
+  }
 
   animate();
 }
