@@ -91,7 +91,7 @@ function startAnimating(fps) {
   then = window.performance.now();
   startTime = then;
 
-  window.addEventListener("deviceorientation", checkOrientation, false);
+  window.addEventListener("deviceorientation", resize, false);
   
   animate();
 }
@@ -115,19 +115,9 @@ function animate(newtime) {
   
 }
 
-var checkResize = function(){
-  canvas.width = window.innerWidth;
-  canvas.height = window.innerHeight;
-};
-
-var previousOrientation = window.orientation;
-var checkOrientation = function(){
-  if(window.orientation !== previousOrientation){
-    previousOrientation = window.orientation;
+var resize = function(){
     canvas.width = window.innerWidth;
     canvas.height = window.innerHeight;
-  }
-  checkResize();
 };
 
 
