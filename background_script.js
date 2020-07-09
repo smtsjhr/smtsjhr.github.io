@@ -31,8 +31,6 @@ else {
   enable_resize = true;
 }
 
-console.log(enable_resize);
-
 var stop = false;
 
 var fps, fpsInterval, startTime, now, then, elapsed;
