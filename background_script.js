@@ -20,6 +20,9 @@ const alpha = 0.03;
 const canvas = document.getElementById('canvas');
 const ctx = canvas.getContext('2d');
 
+var screenorientation = window.screen.orientation ||
+                        window.screen.mozorientation ||
+                        window.screen.msorientation;
 
 var stop = false;
 
@@ -90,8 +93,6 @@ function startAnimating(fps) {
   fpsInterval = 1000 / fps;
   then = window.performance.now();
   startTime = then;
-
-  var screenorientation = window.screen.orientation || window.screen.mozorientation || window.screen.msorientation;
 
   screenorientation.onchange = function(e) {
     canvas.width = window.innerWidth;
