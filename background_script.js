@@ -91,8 +91,13 @@ function startAnimating(fps) {
   then = window.performance.now();
   startTime = then;
 
-  window.addEventListener("deviceorientation", resize, false);
-  
+  var screenorientation = window.screen.orientation || window.screen.mozorientation || window.screen.msorientation;
+
+  screenorientation.onchange = function(e) {
+    canvas.width = window.innerWidth;
+    canvas.height = window.innerHeight;
+  };
+
   animate();
 }
 
@@ -114,12 +119,3 @@ function animate(newtime) {
   requestAnimationFrame(animate);
   
 }
-
-var resize = function(){
-    canvas.width = window.innerWidth;
-    canvas.height = window.innerHeight;
-    canvas.style.width = window.innerWidth;
-    canvas.style.height = window.innerHeight;
-};
-
-
