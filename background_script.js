@@ -118,6 +118,8 @@ function animate(newtime) {
 var resize = function(){
     canvas.width = window.innerWidth;
     canvas.height = window.innerHeight;
+    canvas.style.width = window.innerWidth;
+    canvas.style.height = window.innerHeight;
 };
 
 
