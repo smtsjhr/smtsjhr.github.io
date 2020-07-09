@@ -87,10 +87,13 @@ function startAnimating(fps) {
   canvas.width = window.innerWidth;
   canvas.height = window.innerHeight;
 
-  window.addEventListener("resize", checkOrientation, false);
   fpsInterval = 1000 / fps;
   then = window.performance.now();
   startTime = then;
+
+  if (window.DeviceOrientationEvent) {
+    window.addEventListener("deviceorientation", checkOrientation, false);
+  }
   
   animate();
 }
