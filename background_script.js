@@ -22,19 +22,9 @@ var H;
 const canvas = document.getElementById('canvas');
 const ctx = canvas.getContext('2d');
 
-var screenorientation = window.screen.orientation;
-
-if (screenorientation == undefined) {
-  var enable_resize = false;
-}
-else {
-  enable_resize = true;
-}
-
 var stop = false;
 
 var fps, fpsInterval, startTime, now, then, elapsed;
-
 
 
 startAnimating(30);
@@ -101,15 +91,13 @@ function startAnimating(fps) {
   then = window.performance.now();
   startTime = then;
 
-  if (enable_resize) {
-    screenorientation.onchange = function(e) {
-      W = canvas.width = window.innerWidth;
-      H = canvas.height = window.innerHeight;
-      W = canvas.style.width = window.innerWidth;
-      H = canvas.style.height = window.innerHeight;
-    };
-  }
-
+  window.onresize = function(e) {
+    W = canvas.width = window.innerWidth;
+    H = canvas.height = window.innerHeight;
+    W = canvas.style.width = window.innerWidth;
+    H = canvas.style.height = window.innerHeight;
+  };
+  
   animate();
 }
 
