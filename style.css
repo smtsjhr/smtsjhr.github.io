@@ -183,34 +183,6 @@ li:hover {
 	clear: both;
 }
 
-/*
-.row::-webkit-scrollbar {
-	height: 20px;
-}
-
-.row::-webkit-scrollbar-thumb:horizontal {
-	background: -webkit-radial-gradient(center, 50% 10px, white, black);
-	border-radius: 20px;
-}
-*/
-
-/*
-.row::-webkit-scrollbar-button:horizontal:end:increment {
-	width: 40px;
-	background: linear-gradient(210deg, #000000 40%, rgba(0, 0, 0, 0) 41%), linear-gradient(330deg, #000000 40%, rgba(0, 0, 0, 0) 41%), linear-gradient(90deg, #000000 30%, rgba(0, 0, 0, 0) 31%);
-	background-color: white;
-	display: block;
-}
-
-
-.row::-webkit-scrollbar-button:horizontal:start:decrement {
-	width: 40px;
-	background: linear-gradient(30deg, #000000 40%, rgba(0, 0, 0, 0) 41%), linear-gradient(150deg, #000000 40%, rgba(0, 0, 0, 0) 41%), linear-gradient(270deg, #000000 30%, rgba(0, 0, 0, 0) 31%);
-	background-color: white;
-	display: block;
-}
-*/
-
 .scrollbutton {
 	position: absolute;
 	top: 0px;
