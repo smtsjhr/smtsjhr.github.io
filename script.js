@@ -116,6 +116,7 @@ function loadCanvas(imgs) {
     var background_iframe_element = document.getElementById("background_iframe");
     iframe_element.src = iframe_details[image_id]["url"];
     iframe_element.style = iframe_details[image_id]["style"];
+    iframe_element.style.height = `${window.innerHeight}px`;
     title_element.innerHTML = image_id;
     codepenURL_anchor.href = iframe_details[image_id]["codepen_url"];
     githubURL_anchor.href = iframe_details[image_id]["github_url"];
@@ -123,14 +124,12 @@ function loadCanvas(imgs) {
     look_text_element.style.display = "none";
     background_iframe_element.style.display = "none";
     canvas_element.style.display = "block";
+    main_body_element.style.display = "none";
     video_list = document.querySelectorAll("video");
     video_list.forEach(element => element.style = "");
     imgs.style = "box-shadow: 0 0 40px 0px rgba(255,255,255,1)";
 
-    main_body_element.style.display = "none";
-
     var y = iframe_element.getBoundingClientRect().top + window.pageYOffset; 
-
     window.scrollTo({top: y, behavior: 'smooth'});
 }
 
