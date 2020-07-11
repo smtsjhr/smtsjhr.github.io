@@ -131,6 +131,11 @@ function loadCanvas(imgs) {
 
     var y = iframe_element.getBoundingClientRect().top + window.pageYOffset; 
     window.scrollTo({top: y, behavior: 'smooth'});
+
+    window.onresize = function() {
+        iframe_element.style.height = `${window.innerHeight}px`;
+    }
+    
 }
 
 function close_canvas() {
