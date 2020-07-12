@@ -493,19 +493,26 @@
 <script src="script.js" type="text/javascript"></script>
 
 <script language="JavaScript">
+
 	var hash = window.location.hash.substring(1);
+	
+	if (hash.slice(hash.length - 1) == '/') {
+		hash.splice(0,-1);
+	}
+
 	if (hash == '') {
 
 	}
-	else if (hash == "links" || hash == "look") {
+	else if (hash == "links" || hash == "links/" || hash == "look" || hash == "look/") {
 		var link_element = document.getElementById(hash+'_link');
 		link_element.click();
 	}
 	else {
 		var img_element = document.getElementById(hash+'_img');
-		img_element.click();
+		if (img_element != null) {img_element.click();}
 	}
 
+	
 	document.addEventListener("DOMContentLoaded", function() {
 		var lazyVideos = [].slice.call(document.querySelectorAll("video.lazy"));
 

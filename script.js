@@ -157,6 +157,7 @@ function close_canvas() {
 
 function link_action(a) {
 
+
     if (a.id == "footer_link") {
         window.scrollTo(0,0);
     }
