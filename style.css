@@ -88,6 +88,16 @@ li:hover {
 	font-size: 22px;
 }
 
+.mider_link {
+	font-size: 32px;
+	height: 30px;
+	text-shadow: 1px 1px 2px red, 0 0 1em blue, 0 0 0.2em blue;
+}
+
+.mider_link:hover {
+	font-size: 34px;
+}
+
 
 .background_iframe {
 	display: block;
