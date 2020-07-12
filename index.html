@@ -494,26 +494,29 @@
 
 <script language="JavaScript">
 
-	var hash = window.location.hash.substring(1);
-	
-	if (hash.slice(hash.length - 1) == '/') {
-		hash.splice(0,-1);
-	}
-
-	if (hash == '') {
-
-	}
-	else if (hash == "links" || hash == "links/" || hash == "look" || hash == "look/") {
-		var link_element = document.getElementById(hash+'_link');
-		link_element.click();
-	}
-	else {
-		var img_element = document.getElementById(hash+'_img');
-		if (img_element != null) {img_element.click();}
-	}
-
-	
 	document.addEventListener("DOMContentLoaded", function() {
+
+		window.addEventListener("hashchange", function() {
+			var hash = window.location.hash.substring(1);
+			
+			if (hash.slice(hash.length - 1) == '/') {
+				hash = hash.slice(0,hash.length - 1);
+			}
+			
+			if (hash == '') {
+
+			}
+			else if (hash == "links" || hash == "links/" || hash == "look" || hash == "look/") {
+				var link_element = document.getElementById(hash+'_link');
+				link_element.click();
+			}
+			else {
+				var img_element = document.getElementById(hash+'_img');
+				if (img_element != null) {img_element.click();}
+			}
+		}, false);
+
+
 		var lazyVideos = [].slice.call(document.querySelectorAll("video.lazy"));
 
 		if ("IntersectionObserver" in window) {
