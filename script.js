@@ -156,23 +156,33 @@ function close_canvas() {
 }	
 
 function link_action(a) {
-    var background_iframe_element = document.getElementById("background_iframe");
-    var link_section_element = document.getElementById("link_section");
-    var canvas_container_element = document.getElementById("canvas");
-    var look_text_element = document.getElementById("look_text");
-    image_list = document.querySelectorAll("img");
-    image_list.forEach(element => element.style = "");
-    if (a.id == "links_link") {
-        canvas_container_element.style.display = "none";
-        link_section_element.style.display = "block";
-        look_text_element.style.display = "block";
-        background_iframe_element.style.display = "block";
-    } else if (a.id == "look_link") {
-        canvas_container_element.style.display = "none";
-        link_section_element.style.display = "none";
-        look_text_element.style.display = "none";
-        background_iframe_element.style.display = "none";
+
+    if (a.id == "footer_link") {
+        window.scrollTo(0,0);
     }
+    else {
+        var background_iframe_element = document.getElementById("background_iframe");
+        var link_section_element = document.getElementById("link_section");
+        var canvas_container_element = document.getElementById("canvas");
+        var look_text_element = document.getElementById("look_text");
+        var footer_element = document.getElementById("footer");
+        image_list = document.querySelectorAll("img");
+        image_list.forEach(element => element.style = "");
+        if (a.id == "links_link") {
+            canvas_container_element.style.display = "none";
+            link_section_element.style.display = "block";
+            look_text_element.style.display = "block";
+            footer_element.style.display = "block";
+            background_iframe_element.style.display = "block";
+        } else if (a.id == "look_link") {
+            canvas_container_element.style.display = "none";
+            link_section_element.style.display = "none";
+            look_text_element.style.display = "none";
+            footer_element.style.display = "none";
+            background_iframe_element.style.display = "none";
+        }
+    }
+
 }
 
 function scroll_action(btn) {
