@@ -215,7 +215,6 @@ li:hover {
 	position: relative;
 	padding: 20px;
 	display: none;
-
 }
 
 .closebtn {
@@ -228,9 +227,31 @@ li:hover {
 	text-shadow: 1px 1px 2px red, 0 0 1em blue, 0 0 0.2em blue;
 }
 
+.loading_block {
+	display: block;
+	text-align: center;
+	margin-top: 50px;
+	text-shadow: 2px 2px 4px red, 0 0 1em blue, 0 0 0.2em blue;
+}
+
+.inner_loading_block {
+	transform: translateY(50%);
+}
+
+.blink {
+	animation: blinker 3s linear infinite;
+  }
+  
+  @keyframes blinker {
+	50% {
+	  opacity: 0;
+	}
+  }
+
 iframe.canvas {
+	display: none;
 	width: 100%;
-	height: 700px;
+	height: 0px;
 	margin-top: 50px;
 	padding: 0px;
 	overflow: hidden;
