@@ -166,7 +166,7 @@ function loadCanvas(imgs) {
     var background_iframe_element = document.getElementById("background_iframe");
     var closebtn_element = document.getElementById("closebtn");
     var loading_element = document.getElementById("loading_block");
-    loading_element.style.height = `${window.innerHeight}px`;
+    loading_element.style.height = `${Math.max(400, window.innerHeight)}px`;
     loading_element.style.display = "block";
     iframe_element.src = iframe_details[image_id]["url"];
     iframe_element.style = iframe_details[image_id]["style"];
