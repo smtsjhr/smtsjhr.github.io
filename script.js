@@ -1,3 +1,53 @@
+
+document.addEventListener("DOMContentLoaded", function() {
+
+    window.addEventListener("hashchange", function() {
+        var hash = window.location.hash.substring(1);
+        
+        if (hash.slice(hash.length - 1) == '/') {
+            hash = hash.slice(0,hash.length - 1);
+        }
+        
+        if (hash == '') {
+
+        }
+        else if (hash == "links" || hash == "links/" || hash == "look" || hash == "look/") {
+            var link_element = document.getElementById(hash+'_link');
+            link_element.click();
+        }
+        else {
+            var img_element = document.getElementById(hash+'_img');
+            if (img_element != null) {img_element.click();}
+        }
+    }, false);
+
+
+    var lazyVideos = [].slice.call(document.querySelectorAll("video.lazy"));
+
+    if ("IntersectionObserver" in window) {
+        var lazyVideoObserver = new IntersectionObserver(function(entries, observer) {
+        entries.forEach(function(video) {
+            if (video.isIntersecting) {
+            for (var source in video.target.children) {
+                var videoSource = video.target.children[source];
+                if (typeof videoSource.tagName === "string" && videoSource.tagName === "SOURCE") {
+                videoSource.src = videoSource.dataset.src;
+                }
+            }
+
+            video.target.load();
+            video.target.classList.remove("lazy");
+            lazyVideoObserver.unobserve(video.target);
+            }
+        });
+        });
+
+        lazyVideos.forEach(function(lazyVideo) {
+        lazyVideoObserver.observe(lazyVideo);
+        });
+    }
+});
+
 const iframe_details = {
     "WhispyWave": {
         "url": "https://smtsjhr.github.io/WhispyWave/",
@@ -114,9 +164,17 @@ function loadCanvas(imgs) {
     var link_section_element = document.getElementById("link_section");
     var look_text_element = document.getElementById("look_text");
     var background_iframe_element = document.getElementById("background_iframe");
+    var closebtn_element = document.getElementById("closebtn");
+    var loading_element = document.getElementById("loading_block");
+    loading_element.style.height = `${window.innerHeight}px`;
+    loading_element.style.display = "block";
     iframe_element.src = iframe_details[image_id]["url"];
     iframe_element.style = iframe_details[image_id]["style"];
     iframe_element.style.height = `${window.innerHeight}px`;
+    iframe_element.onload = function() {
+        loading_element.style.display = "none";
+        iframe_element.style.display = "block";
+    }
     title_element.innerHTML = image_id;
     codepenURL_anchor.href = iframe_details[image_id]["codepen_url"];
     githubURL_anchor.href = iframe_details[image_id]["github_url"];
@@ -129,7 +187,7 @@ function loadCanvas(imgs) {
     video_list.forEach(element => element.style = "");
     imgs.style = "box-shadow: 0 0 40px 0px rgba(255,255,255,1)";
 
-    var y = iframe_element.getBoundingClientRect().top + window.pageYOffset; 
+    var y = closebtn_element.getBoundingClientRect().bottom + window.pageYOffset; 
     window.scrollTo({top: y, behavior: 'smooth'});
 
     window.onresize = function() {

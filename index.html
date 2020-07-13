@@ -464,9 +464,17 @@
 
 
 	<div class="container" id="canvas">
-		<span class="closebtn" onclick=close_canvas()>&times;</span>
+		<span class="closebtn" id="closebtn" onclick=close_canvas()>&times;</span>
 
 		<section id="expanded_section" style="background-color : black;">
+			
+			<div class="loading_block" id="loading_block">
+				<div class="inner_loading_block"> 
+					<h3 class="blink">. . . loading . . .</h3>
+					<image id="loading_image" src="GalleryThumbs/trefoil.gif" alt="loading" width="300px" height="300px">
+				</div>
+			</div>
+
 			<iframe class="canvas" id="expanded_iframe"></iframe>
 			
 			<h3 class="header_link">
@@ -488,61 +496,7 @@
 		</section>
 	</div>
 
-	
-
 <script src="script.js" type="text/javascript"></script>
-
-<script language="JavaScript">
-
-	document.addEventListener("DOMContentLoaded", function() {
-
-		window.addEventListener("hashchange", function() {
-			var hash = window.location.hash.substring(1);
-			
-			if (hash.slice(hash.length - 1) == '/') {
-				hash = hash.slice(0,hash.length - 1);
-			}
-			
-			if (hash == '') {
-
-			}
-			else if (hash == "links" || hash == "links/" || hash == "look" || hash == "look/") {
-				var link_element = document.getElementById(hash+'_link');
-				link_element.click();
-			}
-			else {
-				var img_element = document.getElementById(hash+'_img');
-				if (img_element != null) {img_element.click();}
-			}
-		}, false);
-
-
-		var lazyVideos = [].slice.call(document.querySelectorAll("video.lazy"));
-
-		if ("IntersectionObserver" in window) {
-			var lazyVideoObserver = new IntersectionObserver(function(entries, observer) {
-			entries.forEach(function(video) {
-				if (video.isIntersecting) {
-				for (var source in video.target.children) {
-					var videoSource = video.target.children[source];
-					if (typeof videoSource.tagName === "string" && videoSource.tagName === "SOURCE") {
-					videoSource.src = videoSource.dataset.src;
-					}
-				}
-
-				video.target.load();
-				video.target.classList.remove("lazy");
-				lazyVideoObserver.unobserve(video.target);
-				}
-			});
-			});
-
-			lazyVideos.forEach(function(lazyVideo) {
-			lazyVideoObserver.observe(lazyVideo);
-			});
-		}
-		});
-</script>
 
 </body>
 </html>
