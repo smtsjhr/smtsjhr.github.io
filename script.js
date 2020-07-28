@@ -70,6 +70,11 @@ const iframe_details = {
         "codepen_url": "https://codepen.io/smtsjhr/pen/YzyRweW",
         "github_url": "https://github.com/smtsjhr/CircleWeb"
     },
+    "CircleFarm": {
+        "url": "https://smtsjhr.github.io/CircleFarm/",
+        "codepen_url": "https://codepen.io/smtsjhr/pen/eYJazdz",
+        "github_url": "https://github.com/smtsjhr/CircleFarm"
+    },
     "Hall_1": {
         "url": "https://smtsjhr.github.io/Hall_1/",
         "codepen_url": "https://codepen.io/smtsjhr/details/LYVdweb",
