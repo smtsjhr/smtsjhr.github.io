@@ -220,7 +220,6 @@ function close_canvas() {
 
 function link_action(a) {
 
-
     if (a.id == "footer_link") {
         window.scrollTo(0,0);
     }
@@ -259,3 +258,32 @@ function scroll_action(btn) {
     }
 }
 
+var contact = false;
+var contact_element = document.getElementById("hello");
+
+function hello() {
+    if ( contact == false ) {
+        contact = true;
+        let dt = 100;
+        let p = 7;
+        let name = 'smtsjhr';
+        let address = ['@','p','m','.','m','e']
+        var footer_anchor = document.getElementById("footer_link");
+        for (let i = 0; i < 12+p; i++) {
+            setTimeout(function() {
+                if ( i<6 ) {
+                    name = name.concat(address[i]);
+                    footer_anchor.innerHTML = name;
+                }
+                else if (i < 6 + p) { }
+                else if (6+p < i < 12+p) {
+                    name = name.slice(0, -1);
+                    footer_anchor.innerHTML = name;
+                    if ( i == 11+p) {
+                        contact = false;
+                    }
+                }          
+            }, dt*(i));
+        }
+    }
+}
