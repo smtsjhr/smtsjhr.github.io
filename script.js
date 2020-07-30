@@ -70,11 +70,6 @@ const iframe_details = {
         "codepen_url": "https://codepen.io/smtsjhr/pen/YzyRweW",
         "github_url": "https://github.com/smtsjhr/CircleWeb"
     },
-    "CircleFarm": {
-        "url": "https://smtsjhr.github.io/CircleFarm/",
-        "codepen_url": "https://codepen.io/smtsjhr/pen/eYJazdz",
-        "github_url": "https://github.com/smtsjhr/CircleFarm"
-    },
     "Hall_1": {
         "url": "https://smtsjhr.github.io/Hall_1/",
         "codepen_url": "https://codepen.io/smtsjhr/details/LYVdweb",
@@ -96,6 +91,16 @@ const iframe_details = {
         "url": "https://smtsjhr.github.io/RecWaver/",
         "codepen_url": "https://codepen.io/smtsjhr/pen/YzyRweW",
         "github_url": "https://github.com/smtsjhr/RecWaver"
+    },
+    "CircleArcSine": {
+        "url": "https://smtsjhr.github.io/CircleArcSine/",
+        "codepen_url": "https://codepen.io/smtsjhr/pen/wvMLPyN",
+        "github_url": "https://github.com/smtsjhr/CircleArcSine"
+    },
+    "CircleFarm": {
+        "url": "https://smtsjhr.github.io/CircleFarm/",
+        "codepen_url": "https://codepen.io/smtsjhr/pen/eYJazdz",
+        "github_url": "https://github.com/smtsjhr/CircleFarm"
     },
     "CircleWorm": {
         "url": "https://smtsjhr.github.io/CircleWorm/",
