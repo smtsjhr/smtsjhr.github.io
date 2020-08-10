@@ -49,6 +49,12 @@ document.addEventListener("DOMContentLoaded", function() {
 });
 
 const iframe_details = {
+
+    "MoireSun": {
+        "url": "https://smtsjhr.github.io/MoireSun/",
+        "codepen_url": "https://codepen.io/smtsjhr/pen/NWNqZPG",
+        "github_url": "https://github.com/smtsjhr/MoireSun",
+    },
     "WhispyWave": {
         "url": "https://smtsjhr.github.io/WhispyWave/",
         "codepen_url": "https://codepen.io/smtsjhr/pen/qBbmqGR",
