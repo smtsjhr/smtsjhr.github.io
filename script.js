@@ -51,119 +51,119 @@ document.addEventListener("DOMContentLoaded", function() {
 const iframe_details = {
 
     "MoireSun": {
-        "url": "https://smtsjhr.github.io/MoireSun/",
+        "url": "https://smtsjhr.com/MoireSun/",
         "codepen_url": "https://codepen.io/smtsjhr/pen/NWNqZPG",
         "github_url": "https://github.com/smtsjhr/MoireSun",
     },
     "WhispyWave": {
-        "url": "https://smtsjhr.github.io/WhispyWave/",
+        "url": "https://smtsjhr.com/WhispyWave/",
         "codepen_url": "https://codepen.io/smtsjhr/pen/qBbmqGR",
         "github_url": "https://github.com/smtsjhr/WhispyWave",
         "style": "background-color: black;"
     },
     "RippleMoire": {
-        "url": "https://smtsjhr.github.io/RippleMoire/",
+        "url": "https://smtsjhr.com/RippleMoire/",
         "codepen_url": "https://codepen.io/smtsjhr/pen/JjjGGgb",
         "github_url": "https://github.com/smtsjhr/RippleMoire"
     },
     "2-ColoredLiner": {
-        "url": "https://smtsjhr.github.io/2-ColoredLiner/",
+        "url": "https://smtsjhr.com/2-ColoredLiner/",
         "codepen_url": "https://codepen.io/smtsjhr/pen/oNgdeZV",
         "github_url": "https://github.com/smtsjhr/2-ColoredLiner"
     },
     "CircleWeb": {
-        "url": "https://smtsjhr.github.io/CircleWeb/",
+        "url": "https://smtsjhr.com/CircleWeb/",
         "codepen_url": "https://codepen.io/smtsjhr/pen/YzyRweW",
         "github_url": "https://github.com/smtsjhr/CircleWeb"
     },
     "Hall_1": {
-        "url": "https://smtsjhr.github.io/Hall_1/",
+        "url": "https://smtsjhr.com/Hall_1/",
         "codepen_url": "https://codepen.io/smtsjhr/details/LYVdweb",
         "github_url": "https://github.com/smtsjhr/Hall_1"
     },
     "Hall_2": {
-        "url": "https://smtsjhr.github.io/Hall_2/",
+        "url": "https://smtsjhr.com/Hall_2/",
         "codepen_url": "https://codepen.io/smtsjhr/pen/XWXKGrY",
         "github_url": "https://github.com/smtsjhr/Hall_2",
         "style": "background-color: black;"
     },
     "HallTile": {
-        "url": "https://smtsjhr.github.io/HallTile/",
+        "url": "https://smtsjhr.com/HallTile/",
         "codepen_url": "https://codepen.io/smtsjhr/pen/YzwWoQX",
         "github_url": "https://github.com/smtsjhr/HallTile",
         "style": "background-color: black;"
     },
     "RecWaver": {
-        "url": "https://smtsjhr.github.io/RecWaver/",
+        "url": "https://smtsjhr.com/RecWaver/",
         "codepen_url": "https://codepen.io/smtsjhr/pen/YzyRweW",
         "github_url": "https://github.com/smtsjhr/RecWaver"
     },
     "CircleArcSine": {
-        "url": "https://smtsjhr.github.io/CircleArcSine/",
+        "url": "https://smtsjhr.com/CircleArcSine/",
         "codepen_url": "https://codepen.io/smtsjhr/pen/wvMLPyN",
         "github_url": "https://github.com/smtsjhr/CircleArcSine"
     },
     "CircleFarm": {
-        "url": "https://smtsjhr.github.io/CircleFarm/",
+        "url": "https://smtsjhr.com/CircleFarm/",
         "codepen_url": "https://codepen.io/smtsjhr/pen/eYJazdz",
         "github_url": "https://github.com/smtsjhr/CircleFarm"
     },
     "CircleWorm": {
-        "url": "https://smtsjhr.github.io/CircleWorm/",
+        "url": "https://smtsjhr.com/CircleWorm/",
         "codepen_url": "https://codepen.io/smtsjhr/details/LYVrKaa",
         "github_url": "https://github.com/smtsjhr/CircleWorm"
     },
     "CheckerWarp": {
-        "url": "https://smtsjhr.github.io/CheckerWarp/",
+        "url": "https://smtsjhr.com/CheckerWarp/",
         "codepen_url": "https://codepen.io/smtsjhr/pen/NWGNpZE",
         "github_url": "https://github.com/smtsjhr/CheckerWarp"
     },
     "BubbleRing": {
-        "url": "https://smtsjhr.github.io/BubbleRing/",
+        "url": "https://smtsjhr.com/BubbleRing/",
         "codepen_url": "https://codepen.io/smtsjhr/pen/BaNvEwE",
         "github_url": "https://github.com/smtsjhr/BubbleRing"
     },
     "RecSlicer": {
-        "url": "https://smtsjhr.github.io/RecSlicer/",
+        "url": "https://smtsjhr.com/RecSlicer/",
         "codepen_url": "https://codepen.io/smtsjhr/details/ExjEOyd",
         "github_url": "https://github.com/smtsjhr/RecSlicer",
         "style": "background-color: white;"
     },
     "FocusGrid": {
-        "url": "https://smtsjhr.github.io/FocusGrid/",
+        "url": "https://smtsjhr.com/FocusGrid/",
         "codepen_url": "https://codepen.io/smtsjhr/details/ZEGLQjb",
         "github_url": "https://github.com/smtsjhr/FocusGrid",
         "style": "background-color: white;"
     },
     "FocusGrid_2": {
-        "url": "https://smtsjhr.github.io/FocusGrid_2/",
+        "url": "https://smtsjhr.com/FocusGrid_2/",
         "codepen_url": "https://codepen.io/smtsjhr/pen/yLNvJyE",
         "github_url": "https://github.com/smtsjhr/FocusGrid_2",
         "style": "background-color: white;"
     },
     "HarmonicSpiral": {
-        "url": "https://smtsjhr.github.io/HarmonicSpiral/",
+        "url": "https://smtsjhr.com/HarmonicSpiral/",
         "codepen_url": "https://codepen.io/smtsjhr/pen/zYxjzrK",
         "github_url": "https://github.com/smtsjhr/HarmonicSpiral",
         "style": "background-color: white;"
     },
     "PixelWave": {
-        "url": "https://smtsjhr.github.io/PixelWave/",
+        "url": "https://smtsjhr.com/PixelWave/",
         "codepen_url": "https://codepen.io/smtsjhr/pen/VwYxpVw",
         "github_url": "https://github.com/smtsjhr/PixelWave"
     },
     "PointChoreo": {
-        "url": "https://smtsjhr.github.io/PointChoreo/",
+        "url": "https://smtsjhr.com/PointChoreo/",
         "codepen_url": "https://codepen.io/smtsjhr/pen/PoqjbYO",
         "github_url": "https://github.com/smtsjhr/PointChoreo"
     },
     "PolyArch": {
-        "url": "https://smtsjhr.github.io/PolyArch/",
+        "url": "https://smtsjhr.com/PolyArch/",
         "codepen_url": "https://codepen.io/smtsjhr/pen/VwYxgZY",
         "github_url": "https://github.com/smtsjhr/PolyArch"
     },
     "PolyField": {
-        "url": "https://smtsjhr.github.io/PolyField/",
+        "url": "https://smtsjhr.com/PolyField/",
         "codepen_url": "https://codepen.io/smtsjhr/details/xxbaBVv",
         "github_url": "https://github.com/smtsjhr/PolyField"
     }
