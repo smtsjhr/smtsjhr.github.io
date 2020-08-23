@@ -50,6 +50,13 @@ document.addEventListener("DOMContentLoaded", function() {
 
 const iframe_details = {
 
+    "Z_6GaugeTile": {
+        "url": "https://smtsjhr.com/Z_6GaugeTile/",
+        "codepen_url": "https://codepen.io/smtsjhr/pen/JjXErBe",
+        "github_url": "https://github.com/smtsjhr/Z_6GaugeTile",
+        "style": "background-color: white;"
+    },
+
     "MoireSun": {
         "url": "https://smtsjhr.com/MoireSun/",
         "codepen_url": "https://codepen.io/smtsjhr/pen/NWNqZPG",
