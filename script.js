@@ -62,6 +62,13 @@ const iframe_details = {
         "codepen_url": "https://codepen.io/smtsjhr/pen/NWNqZPG",
         "github_url": "https://github.com/smtsjhr/MoireSun",
     },
+
+    "SunnyDayStarryNight": {
+        "url": "https://smtsjhr.com/SunnyDayStarryNight/",
+        "codepen_url": "https://codepen.io/smtsjhr/pen/poyRadP",
+        "github_url": "https://github.com/smtsjhr/SunnyDayStarryNight",
+    },
+
     "WhispyWave": {
         "url": "https://smtsjhr.com/WhispyWave/",
         "codepen_url": "https://codepen.io/smtsjhr/pen/qBbmqGR",
