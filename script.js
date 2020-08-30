@@ -79,7 +79,8 @@ const iframe_details = {
     "RippleMoire": {
         "url": "https://smtsjhr.com/RippleMoire/",
         "codepen_url": "https://codepen.io/smtsjhr/pen/JjjGGgb",
-        "github_url": "https://github.com/smtsjhr/RippleMoire"
+        "github_url": "https://github.com/smtsjhr/RippleMoire",
+        "style": "background-color: white;"
     },
     "2-ColoredLiner": {
         "url": "https://smtsjhr.com/2-ColoredLiner/",
