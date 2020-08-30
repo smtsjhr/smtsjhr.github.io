@@ -49,26 +49,27 @@ document.addEventListener("DOMContentLoaded", function() {
 });
 
 const iframe_details = {
-
+    "WebIFS": {
+        "url": "https://smtsjhr.com/WebIFS/",
+        "codepen_url": "https://codepen.io/smtsjhr/pen/yLOXqpX",
+        "github_url": "https://github.com/smtsjhr/WebIFS",
+    },
     "Z_6GaugeTile": {
         "url": "https://smtsjhr.com/Z_6GaugeTile/",
         "codepen_url": "https://codepen.io/smtsjhr/pen/JjXErBe",
         "github_url": "https://github.com/smtsjhr/Z_6GaugeTile",
         "style": "background-color: white;"
     },
-
     "MoireSun": {
         "url": "https://smtsjhr.com/MoireSun/",
         "codepen_url": "https://codepen.io/smtsjhr/pen/NWNqZPG",
         "github_url": "https://github.com/smtsjhr/MoireSun",
     },
-
     "SunnyDayStarryNight": {
         "url": "https://smtsjhr.com/SunnyDayStarryNight/",
         "codepen_url": "https://codepen.io/smtsjhr/pen/poyRadP",
         "github_url": "https://github.com/smtsjhr/SunnyDayStarryNight",
     },
-
     "WhispyWave": {
         "url": "https://smtsjhr.com/WhispyWave/",
         "codepen_url": "https://codepen.io/smtsjhr/pen/qBbmqGR",
