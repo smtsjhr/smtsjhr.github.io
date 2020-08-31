@@ -79,8 +79,7 @@ const iframe_details = {
     "RippleMoire": {
         "url": "https://smtsjhr.com/RippleMoire/",
         "codepen_url": "https://codepen.io/smtsjhr/pen/JjjGGgb",
-        "github_url": "https://github.com/smtsjhr/RippleMoire",
-        "style": "background-color: white;"
+        "github_url": "https://github.com/smtsjhr/RippleMoire"
     },
     "2-ColoredLiner": {
         "url": "https://smtsjhr.com/2-ColoredLiner/",
@@ -205,7 +204,7 @@ function loadCanvas(imgs) {
     iframe_element.style.height = `${window.innerHeight}px`;
     iframe_element.onload = function() {
         loading_element.style.display = "none";
-        iframe_element.style.display = "block";
+        iframe_element.style.display = "block";   
     }
     title_element.innerHTML = image_id;
     codepenURL_anchor.href = iframe_details[image_id]["codepen_url"];
