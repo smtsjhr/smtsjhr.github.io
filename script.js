@@ -49,6 +49,12 @@ document.addEventListener("DOMContentLoaded", function() {
 });
 
 const iframe_details = {
+
+    "BohrGalaxy": {
+        "url": "https://smtsjhr.com/BohrGalaxy/",
+        "codepen_url": "https://codepen.io/smtsjhr/pen/JjXpoga",
+        "github_url": "https://github.com/smtsjhr/BohrGalaxy",
+    },
     "WebIFS": {
         "url": "https://smtsjhr.com/WebIFS/",
         "codepen_url": "https://codepen.io/smtsjhr/pen/yLOXqpX",
