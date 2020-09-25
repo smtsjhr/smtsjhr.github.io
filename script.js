@@ -48,7 +48,7 @@ document.addEventListener("DOMContentLoaded", function() {
     }
 });
 
-const iframe_details = {
+const sketch_details = {
 
     "BohrGalaxy": {
         "url": "https://smtsjhr.com/BohrGalaxy/",
@@ -191,93 +191,87 @@ const iframe_details = {
 };
 
 function loadCanvas(imgs) {
-    var main_body_element = document.getElementById("main_body");
+    
     var image_id = imgs.id.replace('_img', '');
-    var canvas_element = document.getElementById("canvas");
-    var iframe_element = document.getElementById("expanded_iframe");
+
+    var main_body_element = document.getElementById("main_body");
+    var sketch_landing = document.getElementById("sketch_landing");
+    var sketch_video = document.getElementById("sketch_video");
+    var video_view_link = document.getElementById("video_view_link")
+    var view_link = document.getElementById("view_link")
     var title_element = document.getElementById("title");
     var codepenURL_anchor = document.getElementById("codepenURL");
     var githubURL_anchor = document.getElementById("githubURL");
     var link_section_element = document.getElementById("link_section");
     var look_text_element = document.getElementById("look_text");
     var background_iframe_element = document.getElementById("background_iframe");
-    var closebtn_element = document.getElementById("closebtn");
-    var loading_element = document.getElementById("loading_block");
-    loading_element.style.height = `${Math.max(400, window.innerHeight)}px`;
-    loading_element.style.display = "block";
-    iframe_element.src = iframe_details[image_id]["url"];
-    iframe_element.style = iframe_details[image_id]["style"];
-    iframe_element.style.height = `${window.innerHeight}px`;
-    iframe_element.onload = function() {
-        loading_element.style.display = "none";
-        iframe_element.style.display = "block";   
-    }
+
+    sketch_video.poster = "GalleryThumbs/"+image_id+"_thumb.png";
+    sketch_video.src = "GalleryThumbs/"+image_id+"_300.mp4";
+    video_view_link.href = sketch_details[image_id]["url"];
+    view_link.href = sketch_details[image_id]["url"];
     title_element.innerHTML = image_id;
-    codepenURL_anchor.href = iframe_details[image_id]["codepen_url"];
-    githubURL_anchor.href = iframe_details[image_id]["github_url"];
+    codepenURL_anchor.href = sketch_details[image_id]["codepen_url"];
+    githubURL_anchor.href = sketch_details[image_id]["github_url"];
     link_section_element.style.display = "none";
     look_text_element.style.display = "none";
     background_iframe_element.style.display = "none";
-    canvas_element.style.display = "block";
+    sketch_landing.style.display = "block";
     main_body_element.style.display = "none";
     video_list = document.querySelectorAll("video");
     video_list.forEach(element => element.style = "");
     imgs.style = "box-shadow: 0 0 40px 0px rgba(255,255,255,1)";
-
-    var y = closebtn_element.getBoundingClientRect().bottom + window.pageYOffset; 
-    window.scrollTo({top: y, behavior: 'smooth'});
-
-    window.onresize = function() {
-        iframe_element.style.height = `${window.innerHeight}px`;
-    }
+ 
+    window.scrollTo({top: 0, behavior: 'smooth'});
     
 }
 
 function close_canvas() {
     var main_body_element = document.getElementById("main_body");
-    var canvas_element = document.getElementById("canvas");
-    var iframe_element = document.getElementById("expanded_iframe");
+    var sketch_landing = document.getElementById("sketch_landing");
     var background_iframe_element = document.getElementById("background_iframe");
     var look_link_element = document.getElementById("look_link");
     video_list = document.querySelectorAll("video");
     video_list.forEach(element => element.style = "");
-    iframe_element.src = "";
-    canvas_element.style.display = "none";
+    sketch_landing.style.display = "none";
     background_iframe_element.style.display = "block";
     look_link_element.click();
-
     main_body_element.style.display = "block";
+}
 
-}	
+function set_page(id) {
+    var main_body_element = document.getElementById("main_body");
+    var background_iframe_element = document.getElementById("background_iframe");
+    var link_section_element = document.getElementById("link_section");
+    var sketch_landing = document.getElementById("sketch_landing");
+    var look_text_element = document.getElementById("look_text");
+    var footer_element = document.getElementById("footer");
+    image_list = document.querySelectorAll("img");
+    image_list.forEach(element => element.style = "");
+    if (id == "links") {
+        sketch_landing.style.display = "none";
+        link_section_element.style.display = "block";
+        look_text_element.style.display = "block";
+        footer_element.style.display = "block";
+        background_iframe_element.style.display = "block";
+    } else if (id == "look") {
+        sketch_landing.style.display = "none";
+        link_section_element.style.display = "none";
+        look_text_element.style.display = "none";
+        footer_element.style.display = "none";
+        background_iframe_element.style.display = "none";
+        main_body_element.style.display = "block";
+    }
+}
 
 function link_action(a) {
-
-    if (a.id == "footer_link") {
+    var id = a.id.replace('_link', '');
+    if (id == "footer") {
         window.scrollTo(0,0);
     }
     else {
-        var background_iframe_element = document.getElementById("background_iframe");
-        var link_section_element = document.getElementById("link_section");
-        var canvas_container_element = document.getElementById("canvas");
-        var look_text_element = document.getElementById("look_text");
-        var footer_element = document.getElementById("footer");
-        image_list = document.querySelectorAll("img");
-        image_list.forEach(element => element.style = "");
-        if (a.id == "links_link") {
-            canvas_container_element.style.display = "none";
-            link_section_element.style.display = "block";
-            look_text_element.style.display = "block";
-            footer_element.style.display = "block";
-            background_iframe_element.style.display = "block";
-        } else if (a.id == "look_link") {
-            canvas_container_element.style.display = "none";
-            link_section_element.style.display = "none";
-            look_text_element.style.display = "none";
-            footer_element.style.display = "none";
-            background_iframe_element.style.display = "none";
-        }
+        set_page(id);
     }
-
 }
 
 function scroll_action(btn) {
