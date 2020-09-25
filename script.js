@@ -191,8 +191,10 @@ const sketch_details = {
 };
 
 function loadCanvas(imgs) {
-    var main_body_element = document.getElementById("main_body");
+    
     var image_id = imgs.id.replace('_img', '');
+
+    var main_body_element = document.getElementById("main_body");
     var sketch_landing = document.getElementById("sketch_landing");
     var sketch_video = document.getElementById("sketch_video");
     var video_view_link = document.getElementById("video_view_link")
@@ -235,37 +237,41 @@ function close_canvas() {
     background_iframe_element.style.display = "block";
     look_link_element.click();
     main_body_element.style.display = "block";
+}
 
-}	
+function set_page(id) {
+    var main_body_element = document.getElementById("main_body");
+    var background_iframe_element = document.getElementById("background_iframe");
+    var link_section_element = document.getElementById("link_section");
+    var sketch_landing = document.getElementById("sketch_landing");
+    var look_text_element = document.getElementById("look_text");
+    var footer_element = document.getElementById("footer");
+    image_list = document.querySelectorAll("img");
+    image_list.forEach(element => element.style = "");
+    if (id == "links") {
+        sketch_landing.style.display = "none";
+        link_section_element.style.display = "block";
+        look_text_element.style.display = "block";
+        footer_element.style.display = "block";
+        background_iframe_element.style.display = "block";
+    } else if (id == "look") {
+        sketch_landing.style.display = "none";
+        link_section_element.style.display = "none";
+        look_text_element.style.display = "none";
+        footer_element.style.display = "none";
+        background_iframe_element.style.display = "none";
+        main_body_element.style.display = "block";
+    }
+}
 
 function link_action(a) {
-
-    if (a.id == "footer_link") {
+    var id = a.id.replace('_link', '');
+    if (id == "footer") {
         window.scrollTo(0,0);
     }
     else {
-        var background_iframe_element = document.getElementById("background_iframe");
-        var link_section_element = document.getElementById("link_section");
-        var sketch_landing = document.getElementById("sketch_landing");
-        var look_text_element = document.getElementById("look_text");
-        var footer_element = document.getElementById("footer");
-        image_list = document.querySelectorAll("img");
-        image_list.forEach(element => element.style = "");
-        if (a.id == "links_link") {
-            sketch_landing.style.display = "none";
-            link_section_element.style.display = "block";
-            look_text_element.style.display = "block";
-            footer_element.style.display = "block";
-            background_iframe_element.style.display = "block";
-        } else if (a.id == "look_link") {
-            sketch_landing.style.display = "none";
-            link_section_element.style.display = "none";
-            look_text_element.style.display = "none";
-            footer_element.style.display = "none";
-            background_iframe_element.style.display = "none";
-        }
+        set_page(id);
     }
-
 }
 
 function scroll_action(btn) {
