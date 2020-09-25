@@ -194,24 +194,21 @@ function loadCanvas(imgs) {
     var main_body_element = document.getElementById("main_body");
     var image_id = imgs.id.replace('_img', '');
     var canvas_element = document.getElementById("canvas");
-    var iframe_element = document.getElementById("expanded_iframe");
+    var video_container = document.getElementById("video_container");
+    var sketch_video = document.getElementById("sketch_video");
+    var video_view_link = document.getElementById("video_view_link")
+    var view_link = document.getElementById("view_link")
     var title_element = document.getElementById("title");
     var codepenURL_anchor = document.getElementById("codepenURL");
     var githubURL_anchor = document.getElementById("githubURL");
     var link_section_element = document.getElementById("link_section");
     var look_text_element = document.getElementById("look_text");
     var background_iframe_element = document.getElementById("background_iframe");
-    var closebtn_element = document.getElementById("closebtn");
-    var loading_element = document.getElementById("loading_block");
-    loading_element.style.height = `${Math.max(400, window.innerHeight)}px`;
-    loading_element.style.display = "block";
-    iframe_element.src = iframe_details[image_id]["url"];
-    iframe_element.style = iframe_details[image_id]["style"];
-    iframe_element.style.height = `${window.innerHeight}px`;
-    iframe_element.onload = function() {
-        loading_element.style.display = "none";
-        iframe_element.style.display = "block";   
-    }
+
+    sketch_video.poster = "GalleryThumbs/"+image_id+"_thumb.png";
+    sketch_video.src = "GalleryThumbs/"+image_id+"_300.mp4";
+    video_view_link.href = iframe_details[image_id]["url"];
+    view_link.href = iframe_details[image_id]["url"];
     title_element.innerHTML = image_id;
     codepenURL_anchor.href = iframe_details[image_id]["codepen_url"];
     githubURL_anchor.href = iframe_details[image_id]["github_url"];
@@ -223,29 +220,21 @@ function loadCanvas(imgs) {
     video_list = document.querySelectorAll("video");
     video_list.forEach(element => element.style = "");
     imgs.style = "box-shadow: 0 0 40px 0px rgba(255,255,255,1)";
-
-    var y = closebtn_element.getBoundingClientRect().bottom + window.pageYOffset; 
-    window.scrollTo({top: y, behavior: 'smooth'});
-
-    window.onresize = function() {
-        iframe_element.style.height = `${window.innerHeight}px`;
-    }
+ 
+    window.scrollTo({top: 0, behavior: 'smooth'});
     
 }
 
 function close_canvas() {
     var main_body_element = document.getElementById("main_body");
     var canvas_element = document.getElementById("canvas");
-    var iframe_element = document.getElementById("expanded_iframe");
     var background_iframe_element = document.getElementById("background_iframe");
     var look_link_element = document.getElementById("look_link");
     video_list = document.querySelectorAll("video");
     video_list.forEach(element => element.style = "");
-    iframe_element.src = "";
     canvas_element.style.display = "none";
     background_iframe_element.style.display = "block";
     look_link_element.click();
-
     main_body_element.style.display = "block";
 
 }	

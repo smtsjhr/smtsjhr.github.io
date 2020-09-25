@@ -529,35 +529,40 @@
 		<span class="closebtn" id="closebtn" onclick=close_canvas()>&times;</span>
 
 		<section id="expanded_section" style="background-color : black;">
-			
-			<div class="loading_block" id="loading_block">
-				<div class="inner_loading_block"> 
-					<h3 class="blink">. . . loading . . .</h3>
-					<image id="loading_image" src="GalleryThumbs/trefoil.gif" alt="loading" width="250px" height="250px">
-				</div>
-			</div>
-
+	
 			<iframe class="canvas" id="expanded_iframe"></iframe>
 			
+			<div class="video_container" id="video_container" >
+			<a id="video_view_link" href="" rel="noopener noreferrer" target="_blank">	 
+			<video autoplay muted loop playsinline class="sketch_video"  id="sketch_video" alt="sketch preview" poster="" src="" type="video/mp4">
+			</video>
+			</a>
+			</div>
+
 			<div>
-				<br>
-				<br>
-				<h3 class="header_link">
-				<div class="text" id="title"></div>
+				<h3 class="blink" style="height:70px">
+				<a class="view_link_text" id="view_link" href="" rel="noopener noreferrer" target="_blank"> ^ <br> (click to view)</a>
 				</h3>
-				<p class="text">:: view on ::<br>
-				<a class="underline_link" id="codepenURL" rel="noopener noreferrer" target="_blank">codepen</a> ;; <a class="underline_link" id="githubURL" rel="noopener noreferrer" target="_blank">github</a></p>
+				<br>
+				<br>
+				<h1 class="sketch_name">
+				<div class="text" id="title" style="font-size: 26px;"></div>
+				</h1>
+				<br>
+				<br>
+				<br>
+				<p class="text">:: code ::<br>
+				<a class="underline_link" id="githubURL" rel="noopener noreferrer" target="_blank">github</a> ;; <a class="underline_link" id="codepenURL" rel="noopener noreferrer" target="_blank">codepen</a> </p>
 				<br>
 				<br>
 			</div>
 
-			<div class="header" id="look_text">
-				<div id="links" style="display:inline-block; color: white;">
-					<h1 style="height:50px"><a class="title" href="https://smtsjhr.com">smtsjhr</a>
-					</h1>
-					<br>
-				</div>
+			<div class="footer">
+			<h1 style="height:50px"><a href="https://smtsjhr.com">smtsjhr</a>
+			</h1>
 			</div>
+			
+
 		</section>
 	</div>
 
