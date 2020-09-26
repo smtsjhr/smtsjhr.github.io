@@ -1,4 +1,3 @@
-
 const sketch_details = {
 
     "BohrGalaxy": {
@@ -141,6 +140,7 @@ const sketch_details = {
     }
 };
 
+
 const main_body_element = document.getElementById("main_body");
 const background_iframe_element = document.getElementById("background_iframe");
 const sketch_landing = document.getElementById("sketch_landing");
@@ -226,7 +226,6 @@ function sketch_landingpage(id) {
     background_iframe_element.style.display = "none";
     sketch_landing.style.display = "block";
     main_body_element.style.display = "none";
-    video_list = document.querySelectorAll("video");
     video_list.forEach(element => element.style = "");
  
     window.scrollTo({top: 0, behavior: 'smooth'});
