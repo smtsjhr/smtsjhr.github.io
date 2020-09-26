@@ -1,53 +1,3 @@
-
-document.addEventListener("DOMContentLoaded", function() {
-
-    window.addEventListener("hashchange", function() {
-        var hash = window.location.hash.substring(1);
-        
-        if (hash.slice(hash.length - 1) == '/') {
-            hash = hash.slice(0,hash.length - 1);
-        }
-        
-        if (hash == '') {
-
-        }
-        else if (hash == "links" || hash == "links/" || hash == "look" || hash == "look/") {
-            var link_element = document.getElementById(hash+'_link');
-            link_element.click();
-        }
-        else {
-            var img_element = document.getElementById(hash+'_img');
-            if (img_element != null) {img_element.click();}
-        }
-    }, false);
-
-
-    var lazyVideos = [].slice.call(document.querySelectorAll("video.lazy"));
-
-    if ("IntersectionObserver" in window) {
-        var lazyVideoObserver = new IntersectionObserver(function(entries, observer) {
-        entries.forEach(function(video) {
-            if (video.isIntersecting) {
-            for (var source in video.target.children) {
-                var videoSource = video.target.children[source];
-                if (typeof videoSource.tagName === "string" && videoSource.tagName === "SOURCE") {
-                videoSource.src = videoSource.dataset.src;
-                }
-            }
-
-            video.target.load();
-            video.target.classList.remove("lazy");
-            lazyVideoObserver.unobserve(video.target);
-            }
-        });
-        });
-
-        lazyVideos.forEach(function(lazyVideo) {
-        lazyVideoObserver.observe(lazyVideo);
-        });
-    }
-});
-
 const sketch_details = {
 
     "BohrGalaxy": {
@@ -190,48 +140,103 @@ const sketch_details = {
     }
 };
 
-function loadCanvas(imgs) {
-    
-    var image_id = imgs.id.replace('_img', '');
 
-    var main_body_element = document.getElementById("main_body");
-    var sketch_landing = document.getElementById("sketch_landing");
-    var sketch_video = document.getElementById("sketch_video");
-    var video_view_link = document.getElementById("video_view_link")
-    var view_link = document.getElementById("view_link")
-    var title_element = document.getElementById("title");
-    var codepenURL_anchor = document.getElementById("codepenURL");
-    var githubURL_anchor = document.getElementById("githubURL");
-    var link_section_element = document.getElementById("link_section");
-    var look_text_element = document.getElementById("look_text");
-    var background_iframe_element = document.getElementById("background_iframe");
+const main_body_element = document.getElementById("main_body");
+const background_iframe_element = document.getElementById("background_iframe");
+const sketch_landing = document.getElementById("sketch_landing");
+const sketch_video = document.getElementById("sketch_video");
+const video_view_link = document.getElementById("video_view_link")
+const view_link = document.getElementById("view_link")
+const title_element = document.getElementById("title");
+const codepenURL_anchor = document.getElementById("codepenURL");
+const githubURL_anchor = document.getElementById("githubURL");
+const link_section_element = document.getElementById("link_section");
+const look_text_element = document.getElementById("look_text");
+const look_link_element = document.getElementById("look_link");
+const footer_element = document.getElementById("footer");
+const image_list = document.querySelectorAll("img");
+const video_list = document.querySelectorAll("video");
 
-    sketch_video.poster = "GalleryThumbs/"+image_id+"_thumb.png";
-    sketch_video.src = "GalleryThumbs/"+image_id+"_300.mp4";
-    video_view_link.href = sketch_details[image_id]["url"];
-    view_link.href = sketch_details[image_id]["url"];
-    title_element.innerHTML = image_id;
-    codepenURL_anchor.href = sketch_details[image_id]["codepen_url"];
-    githubURL_anchor.href = sketch_details[image_id]["github_url"];
+
+document.addEventListener("DOMContentLoaded", function() {
+
+    hash_handler();
+
+    window.addEventListener("hashchange", function() {
+        hash_handler();
+    }, false);
+
+
+    var lazyVideos = [].slice.call(document.querySelectorAll("video.lazy"));
+
+    if ("IntersectionObserver" in window) {
+        var lazyVideoObserver = new IntersectionObserver(function(entries, observer) {
+        entries.forEach(function(video) {
+            if (video.isIntersecting) {
+            for (var source in video.target.children) {
+                var videoSource = video.target.children[source];
+                if (typeof videoSource.tagName === "string" && videoSource.tagName === "SOURCE") {
+                videoSource.src = videoSource.dataset.src;
+                }
+            }
+
+            video.target.load();
+            video.target.classList.remove("lazy");
+            lazyVideoObserver.unobserve(video.target);
+            }
+        });
+        });
+
+        lazyVideos.forEach(function(lazyVideo) {
+        lazyVideoObserver.observe(lazyVideo);
+        });
+    }
+});
+
+
+function hash_handler() {
+    var hash = window.location.hash.substring(1);
+        
+        if (hash.slice(hash.length - 1) == '/') {
+            hash = hash.slice(0,hash.length - 1);
+        }
+        
+        if (hash == '') {
+            //do nothing
+        }
+        else if (hash == "links" || hash == "links/" || hash == "look" || hash == "look/") {
+            set_page(hash);
+        }
+        else {
+            sketch_landingpage(hash);
+        }
+}
+
+function sketch_landingpage(id) {
+
+    sketch_video.poster = "GalleryThumbs/"+id+"_thumb.png";
+    sketch_video.src = "GalleryThumbs/"+id+"_300.mp4";
+    video_view_link.href = sketch_details[id]["url"];
+    view_link.href = sketch_details[id]["url"];
+    title_element.innerHTML = id;
+    codepenURL_anchor.href = sketch_details[id]["codepen_url"];
+    githubURL_anchor.href = sketch_details[id]["github_url"];
     link_section_element.style.display = "none";
     look_text_element.style.display = "none";
     background_iframe_element.style.display = "none";
     sketch_landing.style.display = "block";
     main_body_element.style.display = "none";
-    video_list = document.querySelectorAll("video");
     video_list.forEach(element => element.style = "");
-    imgs.style = "box-shadow: 0 0 40px 0px rgba(255,255,255,1)";
  
     window.scrollTo({top: 0, behavior: 'smooth'});
-    
+}
+
+function loadCanvas(preview_video) {   
+    var id = preview_video.id.replace('_img', '');
+    sketch_landingpage(id);  
 }
 
 function close_canvas() {
-    var main_body_element = document.getElementById("main_body");
-    var sketch_landing = document.getElementById("sketch_landing");
-    var background_iframe_element = document.getElementById("background_iframe");
-    var look_link_element = document.getElementById("look_link");
-    video_list = document.querySelectorAll("video");
     video_list.forEach(element => element.style = "");
     sketch_landing.style.display = "none";
     background_iframe_element.style.display = "block";
@@ -240,13 +245,6 @@ function close_canvas() {
 }
 
 function set_page(id) {
-    var main_body_element = document.getElementById("main_body");
-    var background_iframe_element = document.getElementById("background_iframe");
-    var link_section_element = document.getElementById("link_section");
-    var sketch_landing = document.getElementById("sketch_landing");
-    var look_text_element = document.getElementById("look_text");
-    var footer_element = document.getElementById("footer");
-    image_list = document.querySelectorAll("img");
     image_list.forEach(element => element.style = "");
     if (id == "links") {
         sketch_landing.style.display = "none";
