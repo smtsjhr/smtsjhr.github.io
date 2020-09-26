@@ -141,6 +141,23 @@ const sketch_details = {
     }
 };
 
+const main_body_element = document.getElementById("main_body");
+const background_iframe_element = document.getElementById("background_iframe");
+const sketch_landing = document.getElementById("sketch_landing");
+const sketch_video = document.getElementById("sketch_video");
+const video_view_link = document.getElementById("video_view_link")
+const view_link = document.getElementById("view_link")
+const title_element = document.getElementById("title");
+const codepenURL_anchor = document.getElementById("codepenURL");
+const githubURL_anchor = document.getElementById("githubURL");
+const link_section_element = document.getElementById("link_section");
+const look_text_element = document.getElementById("look_text");
+const look_link_element = document.getElementById("look_link");
+const footer_element = document.getElementById("footer");
+const image_list = document.querySelectorAll("img");
+const video_list = document.querySelectorAll("video");
+
+
 document.addEventListener("DOMContentLoaded", function() {
 
     hash_handler();
@@ -191,24 +208,11 @@ function hash_handler() {
             set_page(hash);
         }
         else {
-            sketch_landing(hash);
+            sketch_landingpage(hash);
         }
-
-        console.log("hashchange", hash);
 }
 
-function sketch_landing(id) {
-    var main_body_element = document.getElementById("main_body");
-    var sketch_landing = document.getElementById("sketch_landing");
-    var sketch_video = document.getElementById("sketch_video");
-    var video_view_link = document.getElementById("video_view_link")
-    var view_link = document.getElementById("view_link")
-    var title_element = document.getElementById("title");
-    var codepenURL_anchor = document.getElementById("codepenURL");
-    var githubURL_anchor = document.getElementById("githubURL");
-    var link_section_element = document.getElementById("link_section");
-    var look_text_element = document.getElementById("look_text");
-    var background_iframe_element = document.getElementById("background_iframe");
+function sketch_landingpage(id) {
 
     sketch_video.poster = "GalleryThumbs/"+id+"_thumb.png";
     sketch_video.src = "GalleryThumbs/"+id+"_300.mp4";
@@ -230,15 +234,10 @@ function sketch_landing(id) {
 
 function loadCanvas(preview_video) {   
     var id = preview_video.id.replace('_img', '');
-    sketch_landing(id);  
+    sketch_landingpage(id);  
 }
 
 function close_canvas() {
-    var main_body_element = document.getElementById("main_body");
-    var sketch_landing = document.getElementById("sketch_landing");
-    var background_iframe_element = document.getElementById("background_iframe");
-    var look_link_element = document.getElementById("look_link");
-    video_list = document.querySelectorAll("video");
     video_list.forEach(element => element.style = "");
     sketch_landing.style.display = "none";
     background_iframe_element.style.display = "block";
@@ -247,13 +246,6 @@ function close_canvas() {
 }
 
 function set_page(id) {
-    var main_body_element = document.getElementById("main_body");
-    var background_iframe_element = document.getElementById("background_iframe");
-    var link_section_element = document.getElementById("link_section");
-    var sketch_landing = document.getElementById("sketch_landing");
-    var look_text_element = document.getElementById("look_text");
-    var footer_element = document.getElementById("footer");
-    var image_list = document.querySelectorAll("img");
     image_list.forEach(element => element.style = "");
     if (id == "links") {
         sketch_landing.style.display = "none";
