@@ -16,21 +16,39 @@ const look_link_element = document.getElementById("look_link");
 const footer_element = document.getElementById("footer");
 const image_list = document.querySelectorAll("img");
 const video_list = document.querySelectorAll("video");
+const gallery_element = document.getElementById("gallery");
 
 
 document.addEventListener("DOMContentLoaded", function() {
-
     fetch(sketchdata_url)
         .then(response => response.json())
-        .then(data => {sketch_details = data; hash_handler()});
+        .then(data => {sketch_details = data; init(sketch_details["order"]);});
+});
 
-    
+function init(sketch_order) {
+    buildGallery(sketch_order);   
+    lazyVideo("video.lazy");
+    hash_handler();
     window.addEventListener("hashchange", function() {
         hash_handler();
     }, false);
+}
 
+function buildGallery(sketch_order) {
+    num_sketches = sketch_order.length;
+    for(let i = 0; i < num_sketches; i++) {
+        sketch = sketch_order[i];
+        gallery_element.insertAdjacentHTML('beforeend', addSketchHTML(sketch));
+    }
+}
 
-    var lazyVideos = [].slice.call(document.querySelectorAll("video.lazy"));
+function addSketchHTML(sketchID) {
+        let htmlstring = `<div class="column"><a href="#${sketchID}"><video class="lazy" autoplay muted loop playsinline alt="${sketchID}" id="${sketchID}_img" onclick="loadCanvas(this);" poster="/GalleryThumbs/${sketchID}_thumb.png"><source data-src="/GalleryThumbs/${sketchID}_300.mp4" type="video/mp4"></video></a></div>`;
+        return htmlstring;
+}
+
+function lazyVideo(videoclass) {
+    var lazyVideos = [].slice.call(document.querySelectorAll(videoclass));
 
     if ("IntersectionObserver" in window) {
         var lazyVideoObserver = new IntersectionObserver(function(entries, observer) {
@@ -54,10 +72,7 @@ document.addEventListener("DOMContentLoaded", function() {
         lazyVideoObserver.observe(lazyVideo);
         });
     }
-
-    
-});
-
+}
 
 function hash_handler() {
     var hash = window.location.hash.substring(1);
