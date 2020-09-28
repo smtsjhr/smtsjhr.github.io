@@ -139,8 +139,8 @@
 //         "github_url": "https://github.com/smtsjhr/PolyField"
 //     }
 // };
-
 var sketch_details;
+const sketchdata_url = 'https://raw.githubusercontent.com/smtsjhr/smtsjhr.github.io/master/sketchdata.json';
 const main_body_element = document.getElementById("main_body");
 const background_iframe_element = document.getElementById("background_iframe");
 const sketch_landing = document.getElementById("sketch_landing");
@@ -160,13 +160,11 @@ const video_list = document.querySelectorAll("video");
 
 document.addEventListener("DOMContentLoaded", function() {
 
-    fetch('https://raw.githubusercontent.com/smtsjhr/smtsjhr.github.io/master/sketchdata.json')
+    fetch(sketchdata_url)
         .then(response => response.json())
-        .then(data => {sketch_details = data;})
-        .then(hash_handler());
+        .then(data => {sketch_details = data; hash_handler()});
 
-    //hash_handler();
-
+    
     window.addEventListener("hashchange", function() {
         hash_handler();
     }, false);
