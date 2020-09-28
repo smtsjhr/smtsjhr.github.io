@@ -1,5 +1,5 @@
 {
-
+    "order" : ["Z_6GaugeTile", "2-ColoredLiner", "WebIFS", "PolyArch", "BohrGalaxy", "CircleWeb", "PolyField", "MoireSun", "SunnyDayStarryNight", "Hall_1", "Hall_2", "HallTile", "RippleMoire", "BubbleRing", "RecWaver", "HarmonicSpiral", "CircleArcSine", "CircleFarm", "CircleWorm", "PixelWave", "WhispyWave", "CheckerWarp", "PointChoreo", "RecSlicer", "FocusGrid", "FocusGrid_2"],
     "BohrGalaxy": {
         "url": "https://smtsjhr.com/BohrGalaxy/",
         "codepen_url": "https://codepen.io/smtsjhr/pen/JjXpoga",
