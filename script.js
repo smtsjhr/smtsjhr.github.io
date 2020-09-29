@@ -118,10 +118,7 @@ function loadCanvas(preview_video) {
 
 function close_canvas() {
     video_list.forEach(element => element.style = "");
-    sketch_landing.style.display = "none";
-    background_iframe_element.style.display = "block";
     look_link_element.click();
-    main_body_element.style.display = "block";
 }
 
 function set_page(id) {
@@ -132,6 +129,7 @@ function set_page(id) {
         look_text_element.style.display = "block";
         footer_element.style.display = "block";
         background_iframe_element.style.display = "block";
+        main_body_element.style.display = "block";
     } else if (id == "look") {
         sketch_landing.style.display = "none";
         link_section_element.style.display = "none";
