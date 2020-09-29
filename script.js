@@ -2,7 +2,7 @@
 var sketch_details;
 const sketchdata_url = 'https://raw.githubusercontent.com/smtsjhr/smtsjhr.github.io/master/sketchdata.json';
 const main_body_element = document.getElementById("main_body");
-const background_iframe_element = document.getElementById("background_iframe");
+const background_element = document.getElementById("background");
 const sketch_landing = document.getElementById("sketch_landing");
 const sketch_video = document.getElementById("sketch_video");
 const video_view_link = document.getElementById("video_view_link")
@@ -103,7 +103,7 @@ function sketch_landingpage(id) {
     githubURL_anchor.href = sketch_details[id]["github_url"];
     link_section_element.style.display = "none";
     look_text_element.style.display = "none";
-    background_iframe_element.style.display = "none";
+    background_element.style.display = "none";
     sketch_landing.style.display = "block";
     main_body_element.style.display = "none";
     video_list.forEach(element => element.style = "");
@@ -128,14 +128,14 @@ function set_page(id) {
         link_section_element.style.display = "block";
         look_text_element.style.display = "block";
         footer_element.style.display = "block";
-        background_iframe_element.style.display = "block";
+        background_element.style.display = "block";
         main_body_element.style.display = "block";
     } else if (id == "look") {
         sketch_landing.style.display = "none";
         link_section_element.style.display = "none";
         look_text_element.style.display = "none";
         footer_element.style.display = "none";
-        background_iframe_element.style.display = "none";
+        background_element.style.display = "none";
         main_body_element.style.display = "block";
     }
 }
