@@ -1,5 +1,31 @@
 {
-    "order" : ["Z_6GaugeTile", "2-ColoredLiner", "WebIFS", "PolyArch", "BohrGalaxy", "CircleWeb", "PolyField", "MoireSun", "SunnyDayStarryNight", "Hall_1", "Hall_2", "HallTile", "RippleMoire", "BubbleRing", "RecWaver", "HarmonicSpiral", "CircleArcSine", "CircleFarm", "CircleWorm", "PixelWave", "WhispyWave", "CheckerWarp", "PointChoreo", "RecSlicer", "FocusGrid", "FocusGrid_2"],
+    "order" : [ "Z_6GaugeTile",
+                "2-ColoredLiner",
+                "WebIFS",
+                "PolyArch", 
+                "BohrGalaxy", 
+                "CircleWeb", 
+                "PolyField", 
+                "MoireSun", 
+                "SunnyDayStarryNight", 
+                "Hall_1", 
+                "Hall_2", 
+                "HallTile", 
+                "RippleMoire", 
+                "BubbleRing", 
+                "RecWaver", 
+                "HarmonicSpiral", 
+                "CircleArcSine", 
+                "CircleFarm", 
+                "CircleWorm", 
+                "PixelWave", 
+                "WhispyWave", 
+                "CheckerWarp", 
+                "PointChoreo", 
+                "RecSlicer", 
+                "FocusGrid", 
+                "FocusGrid_2" ],
+
     "BohrGalaxy": {
         "url": "https://smtsjhr.com/BohrGalaxy/",
         "codepen_url": "https://codepen.io/smtsjhr/pen/JjXpoga",
@@ -47,7 +73,7 @@
     },
     "Hall_1": {
         "url": "https://smtsjhr.com/Hall_1/",
-        "codepen_url": "https://codepen.io/smtsjhr/details/LYVdweb",
+        "codepen_url": "https://codepen.io/smtsjhr/pen/LYVdweb",
         "github_url": "https://github.com/smtsjhr/Hall_1"
     },
     "Hall_2": {
@@ -77,7 +103,7 @@
     },
     "CircleWorm": {
         "url": "https://smtsjhr.com/CircleWorm/",
-        "codepen_url": "https://codepen.io/smtsjhr/details/LYVrKaa",
+        "codepen_url": "https://codepen.io/smtsjhr/pen/LYVrKaa",
         "github_url": "https://github.com/smtsjhr/CircleWorm"
     },
     "CheckerWarp": {
@@ -92,12 +118,12 @@
     },
     "RecSlicer": {
         "url": "https://smtsjhr.com/RecSlicer/",
-        "codepen_url": "https://codepen.io/smtsjhr/details/ExjEOyd",
+        "codepen_url": "https://codepen.io/smtsjhr/pen/ExjEOyd",
         "github_url": "https://github.com/smtsjhr/RecSlicer"
     },
     "FocusGrid": {
         "url": "https://smtsjhr.com/FocusGrid/",
-        "codepen_url": "https://codepen.io/smtsjhr/details/ZEGLQjb",
+        "codepen_url": "https://codepen.io/smtsjhr/pen/ZEGLQjb",
         "github_url": "https://github.com/smtsjhr/FocusGrid"
     },
     "FocusGrid_2": {
@@ -127,7 +153,7 @@
     },
     "PolyField": {
         "url": "https://smtsjhr.com/PolyField/",
-        "codepen_url": "https://codepen.io/smtsjhr/details/xxbaBVv",
+        "codepen_url": "https://codepen.io/smtsjhr/pen/xxbaBVv",
         "github_url": "https://github.com/smtsjhr/PolyField"
     }
 
