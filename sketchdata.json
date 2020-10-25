@@ -1,5 +1,6 @@
 {
     "order" : [ "Z_6GaugeTile",
+                "CubeShock",
                 "2-ColoredLiner",
                 "WebIFS",
                 "PolyArch", 
@@ -41,6 +42,11 @@
         "url": "https://smtsjhr.com/Z_6GaugeTile/",
         "codepen_url": "https://codepen.io/smtsjhr/pen/JjXErBe",
         "github_url": "https://github.com/smtsjhr/Z_6GaugeTile"
+    },
+    "CubeShock": {
+        "url": "https://smtsjhr.com/CubeShock/",
+        "codepen_url": "https://codepen.io/smtsjhr/pen/WNxpxzB",
+        "github_url": "https://github.com/smtsjhr/CubeShock"
     },
     "MoireSun": {
         "url": "https://smtsjhr.com/MoireSun/",
