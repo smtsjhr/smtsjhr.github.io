@@ -161,26 +161,25 @@ function scroll_action(btn) {
 }
 
 var contact = false;
-var contact_element = document.getElementById("hello");
 
-function hello() {
+function hi() {
     if ( contact == false ) {
         contact = true;
         let dt = 100;
         let p = 7;
         let name = 'smtsjhr';
         let address = ['@','p','m','.','m','e']
-        var footer_anchor = document.getElementById("footer_link");
+        var name_anchor = document.getElementById("name_link");
         for (let i = 0; i < 12+p; i++) {
             setTimeout(function() {
                 if ( i<6 ) {
                     name = name.concat(address[i]);
-                    footer_anchor.innerHTML = name;
+                    name_anchor.innerHTML = name;
                 }
                 else if (i < 6 + p) { }
                 else if (6+p < i < 12+p) {
                     name = name.slice(0, -1);
-                    footer_anchor.innerHTML = name;
+                    name_anchor.innerHTML = name;
                     if ( i == 11+p) {
                         contact = false;
                     }
