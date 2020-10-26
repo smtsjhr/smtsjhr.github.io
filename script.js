@@ -163,13 +163,14 @@ function scroll_action(btn) {
 var contact = false;
 
 function hi() {
+    var name_anchor = document.getElementById("name_link");
     if ( contact == false ) {
         contact = true;
         let dt = 100;
         let p = 7;
         let name = 'smtsjhr';
         let address = ['@','p','m','.','m','e']
-        var name_anchor = document.getElementById("name_link");
+        name_anchor.href = "mailto:smtsjhr@pm.me";
         for (let i = 0; i < 12+p; i++) {
             setTimeout(function() {
                 if ( i<6 ) {
@@ -182,6 +183,7 @@ function hi() {
                     name_anchor.innerHTML = name;
                     if ( i == 11+p) {
                         contact = false;
+                        name_anchor.href = "https://smtsjhr.com/";
                     }
                 }          
             }, dt*(i));
