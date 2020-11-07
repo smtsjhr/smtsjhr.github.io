@@ -11,7 +11,8 @@
                 "SunnyDayStarryNight",
                 "LineRender", 
                 "Hall_1", 
-                "Hall_2", 
+                "Hall_2",
+                "Hall_3", 
                 "HallTile", 
                 "RippleMoire", 
                 "BubbleRing", 
@@ -92,6 +93,11 @@
         "url": "https://smtsjhr.com/Hall_2/",
         "codepen_url": "https://codepen.io/smtsjhr/pen/XWXKGrY",
         "github_url": "https://github.com/smtsjhr/Hall_2"
+    },
+    "Hall_3": {
+        "url": "https://smtsjhr.com/Hall_3/",
+        "codepen_url": "https://codepen.io/smtsjhr/pen/QWEVOQm",
+        "github_url": "https://github.com/smtsjhr/Hall_3"
     },
     "HallTile": {
         "url": "https://smtsjhr.com/HallTile/",
