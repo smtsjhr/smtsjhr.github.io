@@ -7,7 +7,8 @@
                 "PolyArch", 
                 "BohrGalaxy", 
                 "CircleWeb", 
-                "PolyField", 
+                "PolyField",
+                "FlyBy", 
                 "MoireSun", 
                 "SunnyDayStarryNight",
                 "LineRender", 
@@ -54,6 +55,11 @@
         "url": "https://smtsjhr.com/CubeShock/",
         "codepen_url": "https://codepen.io/smtsjhr/pen/WNxpxzB",
         "github_url": "https://github.com/smtsjhr/CubeShock"
+    },
+    "FlyBy": {
+        "url": "https://smtsjhr.com/FlyBy/",
+        "codepen_url": "https://codepen.io/smtsjhr/pen/PozVmaa",
+        "github_url": "https://github.com/smtsjhr/FlyBy"
     },
     "MoireSun": {
         "url": "https://smtsjhr.com/MoireSun/",
