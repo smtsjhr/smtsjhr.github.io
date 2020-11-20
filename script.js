@@ -171,6 +171,8 @@ function hi() {
         let name = 'smtsjhr';
         let address = ['@','p','m','.','m','e']
         name_anchor.href = "mailto:smtsjhr@pm.me";
+        name_anchor.rel= "noopener noreferrer";
+        name_anchor.target = "_blank";
         for (let i = 0; i < 12+p; i++) {
             setTimeout(function() {
                 if ( i<6 ) {
@@ -184,6 +186,8 @@ function hi() {
                     if ( i == 11+p) {
                         contact = false;
                         name_anchor.href = "https://smtsjhr.com/";
+                        name_anchor.rel= "";
+                        name_anchor.target = "";
                     }
                 }          
             }, dt*(i));
