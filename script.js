@@ -10,6 +10,8 @@ const view_link = document.getElementById("view_link")
 const title_element = document.getElementById("title");
 const codepenURL_anchor = document.getElementById("codepenURL");
 const githubURL_anchor = document.getElementById("githubURL");
+const henURL_anchor = document.getElementById("henURL");
+const NFT_element = document.getElementById("NFTlink");
 const link_section_element = document.getElementById("link_section");
 const look_text_element = document.getElementById("look_text");
 const look_link_element = document.getElementById("look_link");
@@ -93,14 +95,22 @@ function hash_handler() {
 }
 
 function sketch_landingpage(id) {
-
+    let details = sketch_details[id];
     sketch_video.poster = "GalleryThumbs/"+id+"_thumb.png";
     sketch_video.src = "GalleryThumbs/"+id+"_300.mp4";
-    video_view_link.href = sketch_details[id]["url"];
-    view_link.href = sketch_details[id]["url"];
+    video_view_link.href = details["url"];
+    view_link.href = details["url"];
     title_element.innerHTML = id;
-    codepenURL_anchor.href = sketch_details[id]["codepen_url"];
-    githubURL_anchor.href = sketch_details[id]["github_url"];
+    codepenURL_anchor.href = details["codepen_url"];
+    githubURL_anchor.href = details["github_url"];
+    if (!(details["hen_url"] == undefined) ) {
+        henURL_anchor.href = details["hen_url"];
+        NFT_element.style.display = "block";
+    }
+    else {
+        henURL_anchor.href = " ";
+        NFT_element.style.display = "none";
+    }
     link_section_element.style.display = "none";
     look_text_element.style.display = "none";
     background_element.style.display = "none";
