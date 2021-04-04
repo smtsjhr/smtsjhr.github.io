@@ -316,10 +316,16 @@
 
 
 	<div class="container" id="sketch_landing">
+		
 		<span class="closebtn" id="closebtn" onclick=close_canvas()>&times;</span>
-
+		
+		
 		<section id="expanded_section" style="background-color : black;">
 			
+			<button id="left_scroll_landing" type="button" class="navbutton" style="left: 0px" scroll-behavior="smooth" onclick=scroll_action_landing(this)> &lt </button>
+			<button id="right_scroll_landing" type="button" class="navbutton" style="right: 0px" scroll-behavior="smooth" onmousedown=scroll_action_landing(this)> &gt </button>
+			
+
 			<div class="video_container" id="video_container" >
 			<a id="video_view_link" href="" rel="noopener noreferrer" target="_blank">	 
 			<video autoplay muted loop playsinline class="sketch_video"  id="sketch_video" alt="sketch preview" poster="" src="" type="video/mp4">

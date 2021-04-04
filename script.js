@@ -1,5 +1,7 @@
 
 var sketch_details;
+var current_sketch;
+
 const sketchdata_url = 'https://raw.githubusercontent.com/smtsjhr/smtsjhr.github.io/master/sketchdata.json';
 const main_body_element = document.getElementById("main_body");
 const background_element = document.getElementById("background");
@@ -94,7 +96,17 @@ function hash_handler() {
         }
 }
 
+function set_hash(id) {
+    if(history.pushState) {
+        history.pushState(null, null, `#${id}`);
+    }
+    else {
+        location.hash = `#${id}`;
+    }
+}
+
 function sketch_landingpage(id) {
+    current_sketch = id;
     let details = sketch_details[id];
     sketch_video.poster = "GalleryThumbs/"+id+"_thumb.png";
     sketch_video.src = "GalleryThumbs/"+id+"_300.mp4";
@@ -129,6 +141,8 @@ function loadCanvas(preview_video) {
 function close_canvas() {
     video_list.forEach(element => element.style = "");
     look_link_element.click();
+    let video_element = document.getElementById(`${current_sketch}_img`);
+    video_element.scrollIntoView({inline : "center"});
 }
 
 function set_page(id) {
@@ -168,6 +182,40 @@ function scroll_action(btn) {
     else if (btn.id == "left_scroll") {
         gallery_element.scrollBy({left: -330, behavior: 'smooth'});
     }
+}
+
+
+function scroll_action_landing(btn) {
+    if (btn.id == "right_scroll_landing") {
+        let new_id = next_sketch(current_sketch);
+        sketch_landingpage(new_id);
+        set_hash(new_id);
+    }
+    else if (btn.id == "left_scroll_landing") {
+        let new_id = previous_sketch(current_sketch);
+        sketch_landingpage(new_id);
+        set_hash(new_id);
+    }
+}
+
+function next_sketch(id) {
+    let sketch_list = sketch_details["order"];
+    let list_length = sketch_list.length;
+    let current_id = id;
+    let current_index = sketch_list.indexOf(current_id);
+    let next_index = (current_index + 1)%list_length;
+    let next_id = sketch_list[next_index];
+    return next_id;
+}
+
+function previous_sketch(id) {
+    let sketch_list = sketch_details["order"];
+    let list_length = sketch_list.length;
+    let current_id = id;
+    let current_index = sketch_list.indexOf(current_id);
+    let previous_index = (((current_index - 1)%list_length)+list_length)%list_length;
+    let previous_id = sketch_list[previous_index];
+    return previous_id;
 }
 
 var contact = false;
