@@ -316,14 +316,18 @@
 
 
 	<div class="container" id="sketch_landing">
-		
-		<span class="closebtn" id="closebtn" onclick=close_canvas()>&times;</span>
-		
-		
+
 		<section id="expanded_section" style="background-color : black;">
 			
-			<button id="left_scroll_landing" type="button" class="navbutton" style="left: 0px" scroll-behavior="smooth" onclick=scroll_action_landing(this)> &lt </button>
-			<button id="right_scroll_landing" type="button" class="navbutton" style="right: 0px" scroll-behavior="smooth" onmousedown=scroll_action_landing(this)> &gt </button>
+			<div class="nav_panel">
+			<div id="nav_buttons" class="nav_buttons">
+				<span id="left_scroll_landing" class="nav_btn"   onclick=scroll_action_landing(this)>&lt</span>
+				<span class="navbtn_space" ></span>
+				<span id="navclosebtn"  class="nav_btn" onclick=close_canvas()>&times;</span>
+				<span class="navbtn_space" ></span>
+				<span id="right_scroll_landing" class="nav_btn"  onclick=scroll_action_landing(this)>&gt;</span>
+				</div>
+				</div>
 			
 
 			<div class="video_container" id="video_container" >
