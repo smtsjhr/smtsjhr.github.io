@@ -268,11 +268,6 @@ li:hover {
 	box-shadow: 0 0 60px 5px rgba(255, 255, 255, .5);
 }
 
-.nav_btn:active {
-	text-shadow: 2px 2px 2px red, 1em 0 1em blue, 0 0 1em blue;
-	box-shadow: 0 0 60px 5px rgba(255, 255, 255, .5);
-}
-
 .navbtn_space {
 	padding: 20px;
 	height: 40px;
