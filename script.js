@@ -227,21 +227,21 @@ function hi() {
         let dt = 100;
         let p = 7;
         let name = 'smtsjhr';
-        let address = ['@','p','m','.','m','e']
+        let address = ['@','p','m','.','m','e','🤫']
         name_anchor.href = "mailto:smtsjhr@pm.me";
         name_anchor.rel= "noopener noreferrer";
         name_anchor.target = "_blank";
-        for (let i = 0; i < 12+p; i++) {
+        for (let i = 0; i < 15+p; i++) {
             setTimeout(function() {
-                if ( i<6 ) {
+                if ( i<7 ) {
                     name = name.concat(address[i]);
                     name_anchor.innerHTML = name;
                 }
-                else if (i < 6 + p) { }
-                else if (6+p < i < 12+p) {
+                else if (i < 7 + p) { }
+                else if (7+p < i < 15+p) {
                     name = name.slice(0, -1);
                     name_anchor.innerHTML = name;
-                    if ( i == 11+p) {
+                    if ( i == 14+p) {
                         contact = false;
                         name_anchor.href = "https://smtsjhr.com/";
                         name_anchor.rel= "";
